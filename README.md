@@ -1,18 +1,28 @@
 # colors.js
-[![Build Status](https://travis-ci.org/Marak/colors.js.svg?branch=master)](https://travis-ci.org/Marak/colors.js)
-[![version](https://img.shields.io/npm/v/colors.svg)](https://www.npmjs.org/package/colors)
-[![dependencies](https://david-dm.org/Marak/colors.js.svg)](https://david-dm.org/Marak/colors.js)
-[![devDependencies](https://david-dm.org/Marak/colors.js/dev-status.svg)](https://david-dm.org/Marak/colors.js#info=devDependencies)
+[![Build Status](https://travis-ci.org/Marak/colors.js.svg?branch=master)](https://travis-ci.org/jshor/colors.js)
+[![version](https://img.shields.io/npm/v/colors.svg)](https://www.npmjs.org/package/@jshor/colors)
+
+This is a fork of [Marak Squires' original colors.js project](https://github.com/Marak/colors.js)
 
 Please check out the [roadmap](ROADMAP.md) for upcoming features and releases.  Please open Issues to provide feedback, and check the `develop` branch for the latest bleeding-edge updates.
 
 ## get color and style in your node.js console
 
-![Demo](https://raw.githubusercontent.com/Marak/colors.js/master/screenshots/colors.png)
+![Demo](https://raw.githubusercontent.com/jshor/colors.js/master/screenshots/colors.png)
 
 ## Installation
 
-    npm install colors
+Using npm:
+
+```sh
+npm i @jshor/colors
+```
+
+Using yarn:
+
+```sh
+yarn add @jshor/colors
+```
 
 ## colors and styles!
 

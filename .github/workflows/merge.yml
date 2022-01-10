@@ -1,0 +1,37 @@
+name: Build and Publish
+
+on:
+  push:
+    branches:
+      - master
+  release:
+    types: [created]
+
+env:
+  GIT_USER: 'GitHub Actions'
+  GIT_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
+  # CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        node-version: [14]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.org/
+      - name: Set git credentials
+        run: |
+          git config --global user.email ${{ env.GIT_USER }}
+          git config --global user.name ${{ env.GIT_EMAIL }}
+      - name: Install dependencies
+        run: yarn
+      - name: Run tests
+        run: yarn test
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
